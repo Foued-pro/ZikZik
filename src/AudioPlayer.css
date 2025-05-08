@@ -1,0 +1,40 @@
+.custom-audio-player {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  max-width: 800px;
+  margin: auto;
+  color: white;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 6px;
+  appearance: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+}
+
+.progress-bar::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.4);
+}
+
+.time {
+  font-family: monospace;
+  font-size: 14px;
+  min-width: 80px;
+  text-align: right;
+  color: #eee;
+}

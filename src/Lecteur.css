@@ -1,0 +1,40 @@
+.lecteur {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #222;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.4);
+    gap: 20px;
+    z-index: 11;
+  }
+  
+  .lecteur img {
+    height: 80px;
+    border-radius: 8px;
+  }
+  
+  .lecteur .info {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .lecteur h3 {
+    font-size: 18px;
+    margin: 0;
+    white-space: nowrap;
+    color: #fff;
+  }
+  
+  .lecteur audio {
+    flex: 1;
+    max-width: 400px;
+    align-self: center;
+  }
