@@ -38,18 +38,18 @@ const database = [
         sonUrl:"/Musique/SeeYouAgain.mp3",
     },
     {
-        "id": 3,
-        title:"Amtrak",
-        description:"l'album de amtrak",
-        imageUrl:"/Cover/amtrak.jpg",
-        sonUrl:"/Musique/Amtrak.mp3",
+        "id": 6,
+        title:"愛して愛して愛して",
+        description:"Ado ",
+        imageUrl:"https://cdn-images.dzcdn.net/images/cover/03bbc95bfb5e7dbb6c653e581bc09573/1900x1900-000000-80-0-0.jpg",
+        sonUrl:"/Musique/aishite.mp3",
     },
     {
-        "id": 1,
-        title:"Anthem",
-        description:"l'album de Andhem",
-        imageUrl:"/Cover/anthem.png",
-        sonUrl:"/Musique/Anthem.mp3",
+        "id": 7,
+        title:"Dream girl",
+        description:" nafees boujee",
+        imageUrl:"https://cdn-images.dzcdn.net/images/cover/9e2801fd8acb757a3b1f4b8ae6a10456/0x1900-000000-80-0-0.jpg",
+        sonUrl:"/Musique/dreamgirl.mp3",
 
     },
     {

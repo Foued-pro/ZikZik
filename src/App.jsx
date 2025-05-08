@@ -24,7 +24,9 @@ function App() {
       setQueue((prevQueue) => prevQueue.slice(1));
     }
   }
-
+  const toggleQueue = () => {
+  setQueueOpen(prevState => !prevState);
+  }
   return (
     <>
       <div className="card-container">
@@ -41,33 +43,36 @@ function App() {
         
         ))}
       </div>
-      {currentMusique && <Lecteur musique={currentMusique} playing={playing} setPlaying={setPlaying} playNext={playNext} />}
-    
-      <div className={`queue ${queueOpen ? 'open' : 'closed'}`}>
-        <button className="toggle-btn" onClick={() => setQueueOpen(!queueOpen)}>
-          {queueOpen ? '❌' : '🡆'}
-        </button>
-
-        {queueOpen ? (
-          <>
-            <h2>File d'attente</h2>
-            {queue.map((item, index) => (
-              <div key={index} className="queue-item">
-                <span>{index + 1}. {item.title}</span>
-                <img src={item.imageUrl} alt={item.title} />
-                <button onClick={() => removeQueue(item)}>Remove</button>
-              </div>
-            ))}
-          </>
-        ) : (
-          currentMusique && (
-            <div className="queue-collapsed">
-              <img src={currentMusique.imageUrl} alt={currentMusique.title} />
-              <span>{currentMusique.title}</span>
-            </div>
-          )
-        )}
+      {queueOpen && (
+      <div className="queue">
+        <h2>File d'attente</h2>
+        {queue.length === 0 && <p>Aucune musique en attente</p>}
+        {queue.map((musique, index) => (
+          <div className="queue-item" key={index}>
+            <img src={musique.imageUrl} alt={musique.title} />
+            <span>{musique.title}</span>
+            <button onClick={() => removeQueue(musique)}>✕</button>
+          </div>
+        ))}
+        <button className="toggle-btn" onClick={() => setQueueOpen(false)}>−</button>
       </div>
+    )}
+    {!queueOpen && (
+      <button className="toggle-btn" onClick={() => setQueueOpen(true)}>+</button>
+    )}
+
+        {currentMusique && <Lecteur 
+                            musique={currentMusique} 
+                            playing={playing} 
+                            setPlaying={setPlaying} 
+                            playNext={playNext}
+                            queue={queue}
+                            removeQueue={removeQueue}
+                            queueOpen={queueOpen}
+                            setQueueOpen={toggleQueue}  // Passe ici la fonction toggleQueue
+
+  />
+  }
     </>
   );
 }
